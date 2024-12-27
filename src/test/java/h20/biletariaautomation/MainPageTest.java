@@ -55,6 +55,7 @@ public class MainPageTest {
     public void pageSource(){
 
         String pageSource= driver.getPageSource();
+        System.out.println(pageSource);
         if (pageSource.contains("serbia")){
             Assert.fail();
         }else {
