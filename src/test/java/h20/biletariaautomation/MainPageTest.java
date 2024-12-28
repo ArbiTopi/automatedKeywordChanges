@@ -57,10 +57,9 @@ public class MainPageTest {
         String pageSource= driver.getPageSource();
         System.out.println(pageSource);
         if (pageSource.contains("serbia")){
-            Assert.fail();
-            Assert.assertTrue(true);
+            Assert.fail("Biletat me Serbin jan ketu");
         }else {
-            Assert.fail();
+            Assert.assertTrue(true,"ska serbi");
         }
 
     }
