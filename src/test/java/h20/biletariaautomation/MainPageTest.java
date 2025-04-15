@@ -55,11 +55,11 @@ public class MainPageTest {
 
 
             if (pageSource.contains("serbia") ||
-                pageSource.contains("andorra") ||
-                pageSource.contains("andorre") ||
-                pageSource.contains("andorrë") ||
                 pageSource.contains("shqiperi") ||
-                pageSource.contains("shqipëri")) {
+                    pageSource.contains("Serbia") ||
+                    pageSource.contains("Serbia") ||
+                    pageSource.contains("shqiperi") ||
+                    pageSource.contains("shqipëri")) {
             Assert.fail("Biletat e Shqiperis jan ketu");
         }else {
             Assert.assertTrue(true,"ska bileta vl");
