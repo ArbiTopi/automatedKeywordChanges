@@ -55,7 +55,7 @@ public class MainPageTest {
 
 
             if (pageSource.contains("serbia") ||
-                pageSource.contains("albania") ||
+                pageSource.contains("world cup") ||
                 pageSource.contains("Serbia") ||
                 pageSource.contains("Botërori") ||
                 pageSource.contains("shqipëri") ||
