@@ -1,23 +1,27 @@
-name: Run Java Maven Script Every 5 Minutes
+name: Scheduled TestNG Suite
 
+# Trigger every 5 minutes (minimum allowed interval) :contentReference[oaicite:0]{index=0}
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Every 5 minutes
-  workflow_dispatch:       # Allows manual trigger too
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
-  run-java-script:
+  test:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Check out the repo
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up JDK
+      # 2. Set up Java 21 using Temurin distribution :contentReference[oaicite:1]{index=1}
+      - name: Set up Java 21
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '21'   # or whatever version you're using
+          java-version: '21'
 
-      - name: Run Maven script
-        run: test -Dsurefire.suiteXmlFiles=testng.xml
+      # 3. Run your TestNG suite via Maven Surefire :contentReference[oaicite:2]{index=2}
+      - name: Run TestNG suite
+        run: mvn test -Dsurefire.suiteXmlFiles=testng.xml
